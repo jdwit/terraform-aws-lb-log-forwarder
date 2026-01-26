@@ -1,0 +1,6 @@
+s3_bucket_name = "your-alb-logs-bucket"
+architecture   = "arm64"
+
+# Use one of the following:
+lambda_zip_path = "/path/to/bootstrap.zip"  # Local zipfile
+# release_version = "1.0.0"                 # Download release from GitHub
