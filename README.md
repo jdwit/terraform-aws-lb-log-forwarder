@@ -82,6 +82,3 @@ module "lb_log_forwarder" {
 | lambda_log_group_name | Name of the Lambda CloudWatch log group |
 | lambda_log_group_arn | ARN of the Lambda CloudWatch log group |
 
-## License
-
-Apache 2.0
