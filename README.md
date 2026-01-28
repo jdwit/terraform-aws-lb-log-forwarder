@@ -6,13 +6,7 @@ Terraform module to deploy [aws-lb-log-forwarder](https://github.com/jdwit/aws-l
 
 ## Supported Destinations
 
-The [aws-lb-log-forwarder](https://github.com/jdwit/aws-lb-log-forwarder) supports multiple destinations including CloudWatch Logs, Elasticsearch, and more.
-
-**This Terraform module currently supports:**
-- `cloudwatch` - Forward logs to CloudWatch Logs
-- `stdout` - Print logs to Lambda stdout (for debugging)
-
-Support for additional destinations (Elasticsearch, OpenSearch, Splunk) will be added in future releases.
+This module supports forwarding to CloudWatch Logs. See [aws-lb-log-forwarder](https://github.com/jdwit/aws-lb-log-forwarder) for all available destinations.
 
 ## Usage
 
