@@ -12,20 +12,41 @@ This module supports forwarding to CloudWatch Logs. See [aws-lb-log-forwarder](h
 
 ```hcl
 module "lb_log_forwarder" {
-  source = "github.com/jdwit/terraform-aws-lb-log-forwarder"
+  source  = "jdwit/lb-log-forwarder/aws"
+  version = "~> 1.0"
 
-  name = "alb-log-forwarder"
-
-  # Use release_version to download from GitHub releases
-  release_version = "1.0.0"
-
-  # Or use lambda_zip_path for custom builds
-  # lambda_zip_path = "/path/to/bootstrap.zip"
-
+  # Used for AWS resource prefix (Lambda, IAM role, etc.)
+  name           = "alb-log-forwarder"
   s3_bucket_name = "my-alb-logs-bucket"
+
+  # Version of the Lambda binary to download from GitHub releases
+  # See: https://github.com/jdwit/aws-lb-log-forwarder/releases
+  release_version = "1.0.0"
 
   # Graviton (arm64) is default for better performance and lower cost
   # architecture = "x86_64"
+
+  lb_type      = "alb"
+  destinations = "cloudwatch"
+
+  cloudwatch_log_group  = "/aws/alb/access-logs"
+  cloudwatch_log_stream = "alb-logs"
+}
+```
+
+### Using a custom Lambda build
+
+```hcl
+module "lb_log_forwarder" {
+  source  = "jdwit/lb-log-forwarder/aws"
+  version = "~> 1.0"
+
+  name           = "alb-log-forwarder"
+  s3_bucket_name = "my-alb-logs-bucket"
+
+  # Path to custom build (skips GitHub release download)
+  lambda_zip_path = "/path/to/bootstrap.zip"
+  architecture    = "arm64"  # Must match the build architecture
 
   lb_type      = "alb"
   destinations = "cloudwatch"
