@@ -21,7 +21,7 @@ module "lb_log_forwarder" {
 
   # Version of the Lambda binary to download from GitHub releases
   # See: https://github.com/jdwit/aws-lb-log-forwarder/releases
-  release_version = "1.0.0"
+  release_version = "1.1.0"
 
   # Graviton (arm64) is default for better performance and lower cost
   # architecture = "x86_64"
