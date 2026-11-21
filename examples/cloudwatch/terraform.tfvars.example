@@ -3,4 +3,4 @@ architecture   = "arm64"
 
 # Use one of the following:
 lambda_zip_path = "/path/to/bootstrap.zip"  # Local zipfile
-# release_version = "1.0.0"                 # Download release from GitHub
+# release_version = "1.1.0"                 # Download release from GitHub

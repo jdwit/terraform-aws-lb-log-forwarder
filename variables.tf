@@ -50,7 +50,7 @@ variable "s3_suffix" {
 }
 
 variable "release_version" {
-  description = "Version of aws-lb-log-forwarder to deploy (e.g., '1.0.0'). See https://github.com/jdwit/aws-lb-log-forwarder/releases. Ignored if lambda_zip_path is set."
+  description = "Version of aws-lb-log-forwarder to deploy (e.g., '1.1.0'). See https://github.com/jdwit/aws-lb-log-forwarder/releases. Ignored if lambda_zip_path is set."
   type        = string
   default     = null
 }
